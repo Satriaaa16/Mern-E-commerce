@@ -11,7 +11,7 @@ import Kontak from './page/Kontak';
 import Login from './page/login';
 import Produkbaru from './page/produkBaru';
 import Signup from './page/signup';
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
