@@ -11,13 +11,16 @@ import Kontak from './page/Kontak';
 import Login from './page/login';
 import Produkbaru from './page/produkBaru';
 import Signup from './page/signup';
-import toast, { Toaster } from 'react-hot-toast';
+import { store } from './redux/index';
+import { Provider } from 'react-redux';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/'element={<App/>}>
         <Route index element={<Beranda/>}/>
-        <Route path='Menu' element={<Menu/>}/> 
+        {/*<Route path='Menu' element={<Menu/>}/> */}
+        <Route path='Menu/:filterby' element={<Menu/>}/> 
         <Route path='Tentang' element={<Tentang/>}/> 
         <Route path='Kontak' element={<Kontak/>}/> 
         <Route path='login' element={<Login/>}/> 
@@ -30,7 +33,9 @@ const router = createBrowserRouter(
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
   <RouterProvider router={router}/>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
