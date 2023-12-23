@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+      // ...konfigurasi tailwind scrollbar
+      require('tailwind-scrollbar'),
+  ],
 }
 
